@@ -658,27 +658,6 @@
       <!-- </div> -->
     </main>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="/src/js/script.js"></script>
-    <script>
-      function showModal(modalId) {
-        const modal = document.getElementById(modalId);
-        const modalContent = modal.querySelector(".modal-content");
-
-        modal.classList.remove("hidden");
-        setTimeout(() => {
-          modalContent.classList.remove("opacity-0", "scale-95");
-        }, 10);
-      }
-
-      function closeModal(modalId) {
-        const modal = document.getElementById(modalId);
-        const modalContent = modal.querySelector(".modal-content");
-
-        modalContent.classList.add("opacity-0", "scale-95");
-        setTimeout(() => {
-          modal.classList.add("hidden");
-        }, 10);
-      }
-    </script>
+    <script src="../js/masterkey.js"></script>
   </body>
 </html>
