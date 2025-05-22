@@ -1,5 +1,3 @@
-// Make new account form validation script
-
 loginSuccess = ``;
 document.addEventListener("DOMContentLoaded", function () {
   let newAccount = {};
@@ -19,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
           password: newPassword,
         };
         alert("Account created successfully!");
-        // Optionally, clear the form fields
         newAccountForm.reset();
       } else {
         alert("Please fill in all fields.");
