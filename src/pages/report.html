@@ -40,15 +40,17 @@
         id="navbar"
         class="bg-white h-full overflow-hidden w-[7.2rem] min-w-[7.2rem] p-5 shadow-4xl rounded-r-4xl"
       >
-        <div class="flex items-center justify-center mb-2">
-          <img
-            src="../assets/logoMin.png"
-            alt="Logo"
-            class="w-20 h-w-20 rounded-full"
-          />
-        </div>
         <ul id="navbar-list" class="flex flex-col h-full w-full relative z-10">
           <!-- Daftar item navigasi utama -->
+          <li>
+            <div class="flex items-center justify-center mb-2">
+              <img
+                src="../assets/logoMin.png"
+                alt="Logo"
+                class="w-20 h-20 rounded-full"
+              />
+            </div>
+          </li>
           <li
             class="flex flex-col items-center justify-center text-[#8B8B8B] hover:text-primary transition-all duration-300 ease-in-out h-[70px] relative z-20 cursor-pointer"
           >
@@ -101,8 +103,8 @@
               href="master.html"
               class="flex flex-col items-center justify-center"
             >
-              <i class="fa fa-key fa-2x"></i>
-              <p class="text-sm">Master</p>
+              <i class="fa fa-diamond fa-2x" aria-hidden="true"></i>
+              <p class="text-sm">Member</p>
             </a>
           </li>
           <li
@@ -118,7 +120,7 @@
           </li>
           <span class="highlight-span mx-auto shadow-2xl"></span>
           <li
-            class="flex flex-col items-center justify-center mt-[4em] text-[#8B8B8B] hover:text-red-400 cursor-pointer"
+            class="flex flex-col items-center justify-center mt-auto text-[#8B8B8B] hover:text-red-400 cursor-pointer"
           >
             <a
               href="login.html"
@@ -136,12 +138,62 @@
           <h1 class="text-[36pt] font-bold text-[#353535]">Orders History</h1>
         </div>
 
+        <div class="flex gap-x-4">
+          <div class="relative md:w-2/12 w-[15%]">
+            <button
+              id="sortingDropdown"
+              type="button"
+              class="flex justify-between items-center w-full px-5 py-2.5 bg-white rounded-xl shadow-sm text-left text-lg text-gray-800 cursor-pointer"
+            >
+              <span>Sorting By</span>
+              <span
+                class="border-gray-500 border-r-2 border-b-2 p-1 rotate-45 transition-transform duration-200"
+                id="arrow"
+              ></span>
+            </button>
+            <!-- Dropdown Menu -->
+            <div
+              id="sortingMenu"
+              class="absolute top-full left-0 w-full mt-1 bg-white rounded-xl shadow-md z-10 hidden overflow-hidden"
+            >
+              <div
+                class="dropdown-item py-4 px-5 cursor-pointer text-lg text-gray-800 bg-white hover:bg-primary hover:text-white"
+              >
+                By Year
+              </div>
+              <div
+                class="dropdown-item py-4 px-5 cursor-pointer text-lg text-gray-800 bg-white hover:bg-primary hover:text-white"
+              >
+                By Month
+              </div>
+              <div
+                class="dropdown-item py-4 px-5 cursor-pointer text-lg text-gray-800 bg-white hover:bg-primary hover:text-white"
+              >
+                By Weeks
+              </div>
+              <div
+                class="dropdown-item py-4 px-5 cursor-pointer text-lg text-gray-800 bg-white hover:bg-primary hover:text-white"
+              >
+                By Day
+              </div>
+            </div>
+          </div>
+
+          <button
+            id="sortingDropdown"
+            class="flex justify-between items-center w-[15%] px-5 py-2.5 bg-white rounded-xl shadow-sm text-left text-lg text-gray-800 cursor-pointer"
+          >
+            <i class="fa fa-download" aria-hidden="true"></i>
+            <span>CSV</span>
+          </button>
+        </div>
+
         <div class="flex gap-4 py-6 w-full">
           <!-- Card 1 -->
           <div class="bg-white rounded-lg shadow-4xl w-full">
             <div class="h-2 bg-primary rounded-t-lg"></div>
             <div class="p-6">
-              <p class="text-xl text-gray-500">Total Income</p>
+              <p class="text-xl text-gray-500">Beginning balance</p>
               <p class="text-3xl font-bold text-gray-800">Rp. 200.000</p>
             </div>
           </div>
@@ -150,8 +202,8 @@
           <div class="bg-white rounded-lg shadow-4xl w-full">
             <div class="h-2 bg-primary rounded-t-lg"></div>
             <div class="p-6">
-              <p class="text-xl text-gray-500">Total Item Sell</p>
-              <p class="text-3xl font-bold text-gray-800">21345612</p>
+              <p class="text-xl text-gray-500">Admission fee</p>
+              <p class="text-3xl font-bold text-gray-800">+Rp. 200.000</p>
             </div>
           </div>
 
@@ -159,8 +211,8 @@
           <div class="bg-white rounded-lg shadow-4xl w-full">
             <div class="h-2 bg-primary rounded-t-lg"></div>
             <div class="p-6">
-              <p class="text-xl text-gray-500">Total Costumers</p>
-              <p class="text-3xl font-bold text-gray-800">245123</p>
+              <p class="text-xl text-gray-500">Money Out</p>
+              <p class="text-3xl font-bold text-gray-800">-Rp. 200.000</p>
             </div>
           </div>
         </div>
@@ -181,50 +233,6 @@
               />
             </div>
           </form>
-
-          <!-- Dropdown - 2/12 columns -->
-          <div class="md:w-2/12 w-full">
-            <div class="relative w-full">
-              <!-- Dropdown Toggle Button -->
-              <button
-                id="sortingDropdown"
-                class="flex justify-between items-center w-full px-5 py-2.5 bg-white rounded-xl shadow-sm text-left text-lg text-gray-800 cursor-pointer"
-              >
-                <span>Sorting By</span>
-                <span
-                  class="border-gray-500 border-r-2 border-b-2 p-1 rotate-45 transition-transform duration-200"
-                  id="arrow"
-                ></span>
-              </button>
-
-              <!-- Dropdown Menu -->
-              <div
-                id="sortingMenu"
-                class="absolute top-full left-0 w-full mt-1 bg-white rounded-xl shadow-md z-10 hidden overflow-hidden"
-              >
-                <div
-                  class="dropdown-item py-4 px-5 cursor-pointer text-lg text-gray-800 bg-white hover:bg-primary hover:text-white"
-                >
-                  By Year
-                </div>
-                <div
-                  class="dropdown-item py-4 px-5 cursor-pointer text-lg text-gray-800 bg-white hover:bg-primary hover:text-white"
-                >
-                  By Month
-                </div>
-                <div
-                  class="dropdown-item py-4 px-5 cursor-pointer text-lg text-gray-800 bg-white hover:bg-primary hover:text-white"
-                >
-                  By Weeks
-                </div>
-                <div
-                  class="dropdown-item py-4 px-5 cursor-pointer text-lg text-gray-800 bg-white hover:bg-primary hover:text-white"
-                >
-                  By Day
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         <!-- REPORT TABLE -->
@@ -237,7 +245,6 @@
                 class="border-b-2 border-tertiary text-white bg-[#747474] h-[3rem] w-full"
               >
                 <tr class="text-center text-sm rounded-lg">
-                  <th class="p-6">Action</th>
                   <th class="p-6">Transaction ID</th>
                   <th class="p-6">Date</th>
                   <th class="p-6">Amount</th>
@@ -249,129 +256,101 @@
 
               <tbody>
                 <tr class="border-b border-tertiary h-[3rem] text-center">
-                  <td class="p-6">
-                    <span
-                      class="material-symbols-outlined status-icon cursor-pointer"
-                      style="color: #4caf50; font-size: 24px"
+                  <td class="p-4">#00000009</td>
+                  <td class="p-4">23/05/2025</td>
+                  <td class="p-4 font-bold">56</td>
+                  <td class="p-4">Rp.20.000</td>
+                  <td class="p-4">Cash</td>
+                  <td class="p-4">
+                    <button
+                      class="p-3 bg-primary rounded-lg text-white cursor-pointer w-[80%]"
                     >
-                      checklist
-                    </span>
-                  </td>
-                  <td class="p-6">#00000009</td>
-                  <td class="p-6">23/05/2025</td>
-                  <td class="p-6">56</td>
-                  <td class="p-6">Rp.20.000</td>
-                  <td class="p-6">Cash</td>
-                  <td class="p-6">
-                    <button>Dine in</button>
+                      Dine in
+                    </button>
                   </td>
                 </tr>
                 <tr class="border-b border-tertiary h-[3rem] text-center">
-                  <td class="p-6">
-                    <span
-                      class="material-symbols-outlined status-icon cursor-pointer"
-                      style="color: #4caf50; font-size: 24px"
+                  <td class="p-4">#00000009</td>
+                  <td class="p-4">23/05/2025</td>
+                  <td class="p-4 font-bold">56</td>
+                  <td class="p-4">Rp.20.000</td>
+                  <td class="p-4">Cash</td>
+                  <td class="p-4">
+                    <button
+                      class="p-3 bg-primary rounded-lg text-white cursor-pointer w-[80%]"
                     >
-                      checklist
-                    </span>
-                  </td>
-                  <td class="p-6">#00000009</td>
-                  <td class="p-6">23/05/2025</td>
-                  <td class="p-6">56</td>
-                  <td class="p-6">Rp.20.000</td>
-                  <td class="p-6">Cash</td>
-                  <td class="p-6">
-                    <button>Dine in</button>
+                      Dine in
+                    </button>
                   </td>
                 </tr>
                 <tr class="border-b border-tertiary h-[3rem] text-center">
-                  <td class="p-6">
-                    <span
-                      class="material-symbols-outlined status-icon cursor-pointer"
-                      style="color: #4caf50; font-size: 24px"
+                  <td class="p-4">#00000009</td>
+                  <td class="p-4">23/05/2025</td>
+                  <td class="p-4 font-bold">56</td>
+                  <td class="p-4">Rp.20.000</td>
+                  <td class="p-4">Cash</td>
+                  <td class="p-4">
+                    <button
+                      class="p-3 bg-primary rounded-lg text-white cursor-pointer w-[80%]"
                     >
-                      checklist
-                    </span>
-                  </td>
-                  <td class="p-6">#00000009</td>
-                  <td class="p-6">23/05/2025</td>
-                  <td class="p-6">56</td>
-                  <td class="p-6">Rp.20.000</td>
-                  <td class="p-6">Cash</td>
-                  <td class="p-6">
-                    <button>Dine in</button>
+                      Dine in
+                    </button>
                   </td>
                 </tr>
                 <tr class="border-b border-tertiary h-[3rem] text-center">
-                  <td class="p-6">
-                    <span
-                      class="material-symbols-outlined status-icon cursor-pointer"
-                      style="color: #4caf50; font-size: 24px"
+                  <td class="p-4">#00000009</td>
+                  <td class="p-4">23/05/2025</td>
+                  <td class="p-4 font-bold">56</td>
+                  <td class="p-4">Rp.20.000</td>
+                  <td class="p-4">Cash</td>
+                  <td class="p-4">
+                    <button
+                      class="p-3 bg-primary rounded-lg text-white cursor-pointer w-[80%]"
                     >
-                      checklist
-                    </span>
-                  </td>
-                  <td class="p-6">#00000009</td>
-                  <td class="p-6">23/05/2025</td>
-                  <td class="p-6">56</td>
-                  <td class="p-6">Rp.20.000</td>
-                  <td class="p-6">Cash</td>
-                  <td class="p-6">
-                    <button>Dine in</button>
+                      Dine in
+                    </button>
                   </td>
                 </tr>
                 <tr class="border-b border-tertiary h-[3rem] text-center">
-                  <td class="p-6">
-                    <span
-                      class="material-symbols-outlined status-icon cursor-pointer"
-                      style="color: #4caf50; font-size: 24px"
+                  <td class="p-4">#00000009</td>
+                  <td class="p-4">23/05/2025</td>
+                  <td class="p-4 font-bold">56</td>
+                  <td class="p-4">Rp.20.000</td>
+                  <td class="p-4">Cash</td>
+                  <td class="p-4">
+                    <button
+                      class="p-3 bg-primary rounded-lg text-white cursor-pointer w-[80%]"
                     >
-                      checklist
-                    </span>
-                  </td>
-                  <td class="p-6">#00000009</td>
-                  <td class="p-6">23/05/2025</td>
-                  <td class="p-6">56</td>
-                  <td class="p-6">Rp.20.000</td>
-                  <td class="p-6">Cash</td>
-                  <td class="p-6">
-                    <button>Dine in</button>
+                      Dine in
+                    </button>
                   </td>
                 </tr>
                 <tr class="border-b border-tertiary h-[3rem] text-center">
-                  <td class="p-6">
-                    <span
-                      class="material-symbols-outlined status-icon cursor-pointer"
-                      style="color: #4caf50; font-size: 24px"
+                  <td class="p-4">#00000009</td>
+                  <td class="p-4">23/05/2025</td>
+                  <td class="p-4 font-bold">56</td>
+                  <td class="p-4">Rp.20.000</td>
+                  <td class="p-4">Cash</td>
+                  <td class="p-4">
+                    <button
+                      class="p-3 bg-primary rounded-lg text-white cursor-pointer w-[80%]"
                     >
-                      checklist
-                    </span>
-                  </td>
-                  <td class="p-6">#00000009</td>
-                  <td class="p-6">23/05/2025</td>
-                  <td class="p-6">56</td>
-                  <td class="p-6">Rp.20.000</td>
-                  <td class="p-6">Cash</td>
-                  <td class="p-6">
-                    <button>Dine in</button>
+                      Dine in
+                    </button>
                   </td>
                 </tr>
                 <tr class="border-b border-tertiary h-[3rem] text-center">
-                  <td class="p-6">
-                    <span
-                      class="material-symbols-outlined status-icon cursor-pointer"
-                      style="color: #4caf50; font-size: 24px"
+                  <td class="p-4">#00000009</td>
+                  <td class="p-4">23/05/2025</td>
+                  <td class="p-4 font-bold">56</td>
+                  <td class="p-4">Rp.20.000</td>
+                  <td class="p-4">Cash</td>
+                  <td class="p-4">
+                    <button
+                      class="p-3 bg-primary rounded-lg text-white cursor-pointer w-[80%]"
                     >
-                      checklist
-                    </span>
-                  </td>
-                  <td class="p-6">#00000009</td>
-                  <td class="p-6">23/05/2025</td>
-                  <td class="p-6">56</td>
-                  <td class="p-6">Rp.20.000</td>
-                  <td class="p-6">Cash</td>
-                  <td class="p-6">
-                    <button>Dine in</button>
+                      Dine in
+                    </button>
                   </td>
                 </tr>
               </tbody>

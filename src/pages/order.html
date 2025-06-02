@@ -28,15 +28,17 @@
         id="navbar"
         class="bg-white h-full overflow-hidden w-[7.2rem] min-w-[7.2rem] p-5 shadow-4xl rounded-r-4xl"
       >
-        <div class="flex items-center justify-center mb-2">
-          <img
-            src="../assets/logoMin.png"
-            alt="Logo"
-            class="w-20 h-w-20 rounded-full"
-          />
-        </div>
         <ul id="navbar-list" class="flex flex-col h-full w-full relative z-10">
           <!-- Daftar item navigasi utama -->
+          <li>
+            <div class="flex items-center justify-center mb-2">
+              <img
+                src="../assets/logoMin.png"
+                alt="Logo"
+                class="w-20 h-20 rounded-full"
+              />
+            </div>
+          </li>
           <li
             class="flex flex-col items-center justify-center text-[#8B8B8B] hover:text-primary transition-all duration-300 ease-in-out h-[70px] relative z-20 cursor-pointer"
           >
@@ -89,8 +91,8 @@
               href="master.html"
               class="flex flex-col items-center justify-center"
             >
-              <i class="fa fa-key fa-2x"></i>
-              <p class="text-sm">Master</p>
+              <i class="fa fa-diamond fa-2x" aria-hidden="true"></i>
+              <p class="text-sm">Member</p>
             </a>
           </li>
           <li
@@ -106,7 +108,7 @@
           </li>
           <span class="highlight-span mx-auto shadow-2xl"></span>
           <li
-            class="flex flex-col items-center justify-center mt-[4em] text-[#8B8B8B] hover:text-red-400 cursor-pointer"
+            class="flex flex-col items-center justify-center mt-auto text-[#8B8B8B] hover:text-red-400 cursor-pointer"
           >
             <a
               href="login.html"
@@ -195,7 +197,6 @@
           class="grid grid-cols-4 auto-rows-auto gap-4 justify-items-center p-4"
           id="orderList"
         >
-          <!-- Item Card Template (Repeated) -->
           <div
             class="flex flex-col items-center justify-center bg-white shadow-4xl rounded-xl cursor-pointer transition-all duration-200 p-6 w-full h-[50vh] relative mt-10"
           >
@@ -326,6 +327,60 @@
           <hr class="w-full h-[1px] my-2 border-0 bg-tertiary" />
         </div>
 
+        <div class="w-full px-6">
+          <form class="max-w-md mx-auto bg-white">
+            <!-- Customer Name -->
+            <div>
+              <label for="name" class="block text-gray-800 text-[11pt]"
+                >Costumers Name</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full border border-[#383838] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:border-primary p-1"
+              />
+            </div>
+
+            <!-- Phone Number -->
+            <div>
+              <label for="phone" class="block text-gray-800 text-[11pt]"
+                >No Telephone</label
+              >
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                pattern="[0-9]{10,15}"
+                class="w-full border border-[#383838] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:border-primary p-1"
+              />
+            </div>
+
+            <!-- Table Number -->
+            <div>
+              <label for="table" class="block text-gray-800 text-[11pt]"
+                >No.Table</label
+              >
+              <select
+                id="table"
+                name="table"
+                required
+                class="w-[50%] border border-[#383838] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:border-primary p-1 text-[11pt]"
+              >
+                <option value="">Select Table</option>
+                <option value="245">245</option>
+                <option value="246">246</option>
+              </select>
+            </div>
+          </form>
+        </div>
+
+        <div class="w-full px-6 mt-4">
+          <p class="text-textColor text-sm">#Orders0021 | 23/05/2025 | 14:30</p>
+          <hr class="w-full h-[1px] my-2 border-0 bg-tertiary" />
+        </div>
         <!-- Orders -->
         <div
           id="orderedList"
@@ -374,12 +429,17 @@
               </button>
             </div>
             <div class="flex justify-between items-center w-full h-12 mt-2">
-              <button
-                class="bg-[#C9C9C9] text-white h-full rounded-md text-sm font-medium flex items-center w-[75%] justify-center"
-                type="button"
+              <form
+                action="
+              "
               >
-                Please Low Sugar
-              </button>
+                <input
+                  type="text"
+                  class="border border-gray-300 rounded-md bg-[#C9C9C9] p-3 w-full text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                  placeholder="add note"
+                />
+              </form>
+
               <button
                 class="text-tertiary hover:text-red-700 h-full rounded-md border-2 border-tertiary transition-colors duration-200 w-[20%]"
                 type="button"
@@ -393,25 +453,15 @@
         </div>
 
         <div
-          class="h-[25%] w-full flex flex-col justify-end bottom-0 p-6 shadow-continuePayment bg-white"
+          class="h-auto w-full flex flex-col justify-end bottom-0 p-4 shadow-continuePayment bg-white"
         >
-          <div class="flex justify-between items-center">
-            <h1 class="text-tertiary text-lg font-light">Pajak</h1>
-            <p class="text-textColor text-sm w-auto">Rp. 20.000</p>
-          </div>
-          <div class="flex justify-between items-center">
-            <h1 class="text-tertiary text-lg font-light">Subtotal</h1>
-            <p class="text-textColor text-lg font-bold w-auto">Rp. 20.000</p>
-          </div>
-          <div class="flex justify-end mt-3 w-full">
-            <button
-              class="bg-linear-[180deg,_#FF5733,_#BB482F] orderNextButton-content text-white px-8 py-[0.80rem] rounded-lg text-lg font-semibold shadow-md hover:bg-primary-dark transition-colors duration-200 w-full"
-              type="button"
-              onclick="orderNext()"
-            >
-              Continue Payment
-            </button>
-          </div>
+          <button
+            class="bg-linear-[180deg,_#FF5733,_#BB482F] orderNextButton-content text-white px-8 py-[0.80rem] rounded-lg text-lg font-semibold shadow-md hover:bg-primary-dark transition-colors duration-200 w-full"
+            type="button"
+            onclick="orderNext()"
+          >
+            Continue Payment
+          </button>
         </div>
       </aside>
 
@@ -448,14 +498,16 @@
           </span>
         </div>
 
-        <h2 class="text-lg text-left w-full font-semibold text-textColor px-6">
-          Payment Method
-        </h2>
         <!-- Select Payment -->
         <div
           class="w-full px-6 h-full relative overflow-y-auto"
           id="paymentMethod"
         >
+          <div
+            class="w-full h-32 border-2 border-dashed border-gray-400 rounded-xl flex items-center justify-center text-gray-500 italic text-sm"
+          >
+            No membership yet
+          </div>
           <!-- Select Payment -->
           <div class="flex flex-col p-3 gap-4 w-full h-auto">
             <div class="space-y-2">
@@ -546,7 +598,42 @@
             </div>
 
             <div class="space-y-2">
-              <h3 class="text-lg font-medium text-textColor">Card</h3>
+              <h3 class="text-lg font-medium text-textColor">Other</h3>
+              <div class="flex flex-col gap-1">
+                <div
+                  class="flex justify-center font-light items-center gap-x-2 border-2 border-tertiary rounded-lg px-4 py-2 bg-none text-tertiary has-checked:border-primary has-checked:bg-[#fff6f4] has-checked:text-primary"
+                >
+                  <form
+                    action="/action_page.php"
+                    class="flex items-center justify-between w-full px-2"
+                  >
+                    <div class="flex items-center justify-center gap-x-2">
+                      <div class="w-6 h-6">
+                        <img
+                          src="../assets/paymentIcons/cash.png"
+                          alt="ShopeePay"
+                          class="w-full object-contain"
+                        />
+                      </div>
+                      <label for="Cash">Cash</label>
+                    </div>
+
+                    <input
+                      type="checkbox"
+                      id="Cash"
+                      name="Cash"
+                      value="Cash"
+                      class="appearance-none w-4 h-4 rounded-full border-2 border-tertiary checked:bg-primary checked:border-primary focus:outline-none transition-colors duration-200"
+                    />
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <h3 class="text-lg font-medium text-tertiary">
+                Card (Comming Soon)
+              </h3>
               <div class="flex flex-col gap-1">
                 <div
                   class="flex justify-center font-light items-center gap-x-2 border-2 border-tertiary rounded-lg px-4 py-2 bg-none text-tertiary has-checked:border-primary has-checked:bg-[#fff6f4] has-checked:text-primary"
@@ -625,39 +712,6 @@
                       id="BCA"
                       name="BCA"
                       value="BCA"
-                      class="appearance-none w-4 h-4 rounded-full border-2 border-tertiary checked:bg-primary checked:border-primary focus:outline-none transition-colors duration-200"
-                    />
-                  </form>
-                </div>
-              </div>
-            </div>
-
-            <div class="space-y-2">
-              <h3 class="text-lg font-medium text-textColor">Other</h3>
-              <div class="flex flex-col gap-1">
-                <div
-                  class="flex justify-center font-light items-center gap-x-2 border-2 border-tertiary rounded-lg px-4 py-2 bg-none text-tertiary has-checked:border-primary has-checked:bg-[#fff6f4] has-checked:text-primary"
-                >
-                  <form
-                    action="/action_page.php"
-                    class="flex items-center justify-between w-full px-2"
-                  >
-                    <div class="flex items-center justify-center gap-x-2">
-                      <div class="w-6 h-6">
-                        <img
-                          src="../assets/paymentIcons/cash.png"
-                          alt="ShopeePay"
-                          class="w-full object-contain"
-                        />
-                      </div>
-                      <label for="Cash">Cash</label>
-                    </div>
-
-                    <input
-                      type="checkbox"
-                      id="Cash"
-                      name="Cash"
-                      value="Cash"
                       class="appearance-none w-4 h-4 rounded-full border-2 border-tertiary checked:bg-primary checked:border-primary focus:outline-none transition-colors duration-200"
                     />
                   </form>
