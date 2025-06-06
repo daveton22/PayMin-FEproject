@@ -112,8 +112,8 @@ function showPaymentSuccessModal() {
     paymentSuccess.classList.add("hidden");
   }, 3500);
 
-  const asideFinish = document.getElementById("sidebarFinish");
-  asideFinish.classList.add("hidden");
+  const invoiceModal = document.getElementById("modalInvoice");
+  invoiceModal.classList.add("hidden");
 
   orderList.classList.remove(
     "grid-cols-1",
