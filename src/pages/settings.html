@@ -125,9 +125,10 @@
         <div class="flex items-center justify-between">
           <h1 class="text-[36pt] font-bold text-[#353535]">Settings</h1>
         </div>
-        <div class="flex justify-around items-center w-full h-full p-4">
+        <div class="flex items-center w-full h-full p-4 gap-12">
+          <!-- Navigation -->
           <div
-            class="flex flex-col items-center w-auto h-full bg-white rounded-lg shadow-4xl"
+            class="flex flex-col items-center w-auto h-full bg-white rounded-lg shadow-4xl flex-1"
           >
             <!-- Your Restaurant -->
             <div
@@ -175,43 +176,66 @@
               </div>
             </div>
           </div>
+
           <!-- Profile -->
-          <div class="bg-white rounded-lg shadow-md w-80 p-6">
+          <div
+            class="bg-white rounded-xl shadow-md p-6 flex-2 mx-auto flex flex-col h-full w-full"
+            id="yourRestaurant"
+          >
+            <!-- Title -->
             <h2 class="text-sm font-semibold text-gray-700 mb-4">
               Your Profile
             </h2>
 
-            <div class="flex flex-col items-center relative">
+            <!-- Profile Info -->
+            <div class="flex h-auto w-full mx-5 items-center">
               <!-- Profile Picture -->
-              <div class="relative w-20 h-20 mb-2">
+              <div class="relative w-40 h-40 mb-2">
                 <img
-                  src="https://via.placeholder.com/80"
+                  src="https://via.placeholder.com/96"
                   alt="Profile"
                   class="rounded-full w-full h-full object-cover bg-gray-200"
                 />
                 <!-- Edit Icon -->
                 <button
-                  class="absolute bottom-0 right-0 bg-orange-500 text-white rounded-full p-1 hover:bg-orange-600"
+                  class="absolute bottom-1 right-1 bg-primary text-white rounded-full p-1.5 shadow-md hover:bg-orange-600"
                 >
-                  ✎
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15.232 5.232l3.536 3.536M9 11l3.536-3.536a2 2 0 012.828 0l1.172 1.172a2 2 0 010 2.828L13 15l-4 1 1-4z"
+                    />
+                  </svg>
                 </button>
               </div>
 
-              <!-- Name -->
-              <p class="font-semibold text-gray-800">Daveton Aljabar</p>
-              <!-- Last Updated -->
-              <p class="text-sm text-gray-500">Last updated: 12/05/2024</p>
+              <!-- Name & Date -->
+              <div class="flex flex-col justify-center ml-4 text-lg">
+                <p class="font-semibold text-gray-800">Daveton Aljabar</p>
+                <p class="text-gray-500">Last updated: 12/05/2024</p>
+              </div>
             </div>
 
+            <!-- Divider -->
+            <div class="border-t border-gray-200 my-6"></div>
+
             <!-- Buttons -->
-            <div class="mt-6 flex justify-end space-x-2">
+            <div class="flex justify-end space-x-2 mt-auto">
               <button
-                class="border border-orange-500 text-orange-500 rounded px-4 py-2 hover:bg-orange-50"
+                class="border border-orange-500 text-orange-500 rounded px-4 py-2 hover:bg-orange-50 text-sm font-medium"
               >
                 Cancel
               </button>
               <button
-                class="bg-orange-500 text-white rounded px-4 py-2 hover:bg-orange-600"
+                class="bg-gradient-to-r from-orange-500 to-orange-700 text-white rounded px-4 py-2 hover:from-orange-600 hover:to-orange-800 text-sm font-medium"
               >
                 Save Changes
               </button>

@@ -227,7 +227,7 @@
             >
               <!-- Add Item Card -->
               <div
-                class="flex flex-col items-center justify-center border-2 border-dashed border-primary rounded-xl cursor-pointer hover:bg-[#FFB09F] transition-all duration-200 p-6 w-full h-[50vh]"
+                class="flex flex-col items-center justify-center border-2 border-dashed border-primary rounded-xl cursor-pointer hover:bg-[#FFB09F] transition-all duration-200 p-6 w-full h-[50vh] hidden"
               >
                 <button
                   class="flex flex-col items-center justify-center focus:outline-none"
@@ -248,7 +248,7 @@
 
               <!-- Item Card Template (Repeated) -->
               <div
-                class="w-full h-full bg-white rounded-lg shadow-4xl card-container"
+                class="w-full h-full bg-white rounded-lg shadow-4xl card-container hidden"
               >
                 <div class="flex flex-col items-center w-full h-full">
                   <!-- Gambar produk -->
@@ -294,6 +294,16 @@
                     </button>
                   </div>
                 </div>
+              </div>
+
+              <!-- Search icon -->
+              <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center items-center"
+              >
+                <i class="fa fa-search fa-5x" aria-hidden="true"></i>
+                <p class="my-12 text-lg">
+                  We can’t find any item matching your search
+                </p>
               </div>
             </div>
           </div>

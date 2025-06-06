@@ -181,7 +181,7 @@
 
           <button
             id="sortingDropdown"
-            class="flex justify-between items-center w-[15%] px-5 py-2.5 bg-white rounded-xl shadow-sm text-left text-lg text-gray-800 cursor-pointer"
+            class="flex justify-between items-center w-[10%] px-5 py-2.5 bg-white rounded-xl shadow-sm text-left text-lg text-gray-800 cursor-pointer"
           >
             <i class="fa fa-download" aria-hidden="true"></i>
             <span>CSV</span>
@@ -254,7 +254,7 @@
                 </tr>
               </thead>
 
-              <tbody>
+              <tbody class="hidden">
                 <tr class="border-b border-tertiary h-[3rem] text-center">
                   <td class="p-4">#00000009</td>
                   <td class="p-4">23/05/2025</td>
@@ -354,6 +354,16 @@
                   </td>
                 </tr>
               </tbody>
+
+              <!-- Search icon -->
+              <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center items-center"
+              >
+                <i class="fa fa-search fa-5x" aria-hidden="true"></i>
+                <p class="my-12 text-lg">
+                  We can’t find any item matching your search
+                </p>
+              </div>
             </table>
           </div>
 
@@ -418,7 +428,7 @@
         <!-- REPORT TABLE END -->
       </section>
 
-      <!-- Modal Edit Item -->
+      <!-- Modal Delete Item -->
       <div
         class="fixed inset-0 bg-black/25 backdrop-blur-md justify-center items-center z-50 animate-fadeIn hidden"
         id="modalAddItem"
@@ -432,8 +442,9 @@
           <div class="mt-4 flex flex-col gap-y-2 py-2">
             <h1 class="text-3xl font-bold text-primary mb-2">Delete History</h1>
             <p class="text-lg text-gray-800">
-              Deleting <span class="font-bold">Transaction ID #000009</span>.
-              This cannot be undone.
+              Deleting <span class="font-bold">Transaction ID #000009</span> as
+              <span class="text-primary font-bold">Void</span>. This cannot be
+              undone.
             </p>
           </div>
 

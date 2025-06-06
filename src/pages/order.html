@@ -193,12 +193,13 @@
           </form>
         </div>
 
+        <!-- Item not found -->
         <div
-          class="grid grid-cols-4 auto-rows-auto gap-4 justify-items-center p-4"
+          class="grid grid-cols-4 auto-rows-auto gap-4 justify-items-center p-4 relative w-full h-full"
           id="orderList"
         >
           <div
-            class="flex flex-col items-center justify-center bg-white shadow-4xl rounded-xl cursor-pointer transition-all duration-200 p-6 w-full h-[50vh] relative mt-10"
+            class="flex flex-col items-center justify-center bg-white shadow-4xl rounded-xl cursor-pointer transition-all duration-200 p-6 w-full h-[50vh] relative mt-10 hidden"
           >
             <div class="relative w-full h-full">
               <img
@@ -222,6 +223,16 @@
             >
               Add
             </button>
+          </div>
+
+          <!-- Search icon -->
+          <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center items-center"
+          >
+            <i class="fa fa-search fa-5x" aria-hidden="true"></i>
+            <p class="my-12 text-lg">
+              We can’t find any item matching your search
+            </p>
           </div>
         </div>
       </section>
@@ -504,10 +515,68 @@
           id="paymentMethod"
         >
           <div
-            class="w-full h-32 border-2 border-dashed border-gray-400 rounded-xl flex items-center justify-center text-gray-500 italic text-sm"
+            class="w-full h-32 border-2 border-dashed border-gray-400 rounded-xl flex items-center justify-center text-gray-500 italic text-sm hidden"
           >
             No membership yet
           </div>
+
+          <!-- Silver Card -->
+          <div
+            class="w-full rounded-xl p-5 bg-linear-[-90deg,_#D9D9D9,_#B9B9B9] shadow-md relative flex items-center justify-between text-white border-[1px] border-[#929292]"
+            id="cardSilver"
+          >
+            <div class="text-sm my-2">
+              <p>Name : <strong>Daveton Aljabar</strong></p>
+              <p>No.Tlp : <strong>08236538337</strong></p>
+              <p>Point : 2</p>
+            </div>
+            <div class="text-xs text-right">
+              <p class="mb-4 text-gray-900 font-light">Membership</p>
+              <span
+                class="bg-linear-[90deg,_#FF5733,_#B9B9B9] text-white px-3 py-2 rounded font-bold text-xs"
+                >SILVER</span
+              >
+            </div>
+          </div>
+
+          <!-- Gold Card -->
+          <div
+            class="w-full rounded-xl p-5 bg-linear-[-90deg,_#FFE493,_#C7A028] shadow-md relative flex items-center justify-between text-white border-[1px] border-[#C79F28] hidden"
+            id="cardGold"
+          >
+            <div class="text-sm my-2">
+              <p>Name : <strong>Daveton Aljabar</strong></p>
+              <p>No.Tlp : <strong>08236538337</strong></p>
+              <p>Point : 2</p>
+            </div>
+            <div class="text-xs text-right">
+              <p class="mb-4 text-gray-900 font-light">Membership</p>
+              <span
+                class="bg-linear-[90deg,_#FF5733,_#C79F27] text-white px-3 py-2 rounded font-bold text-xs"
+                >GOLD</span
+              >
+            </div>
+          </div>
+
+          <!-- Platinum Card -->
+          <div
+            class="w-full rounded-xl p-5 bg-linear-[-90deg,_#C0BBF3,_#6A5DDE] shadow-md relative flex items-center justify-between text-white border-[1px] border-[#6A5DDE] hidden"
+            id="cardPlatinum"
+          >
+            <div class="text-sm my-2">
+              <p>Name : <strong>Daveton Aljabar</strong></p>
+              <p>No.Tlp : <strong>08236538337</strong></p>
+              <p>Point : 2</p>
+            </div>
+            <div class="text-xs text-right">
+              <p class="mb-4 text-gray-900 font-light">Membership</p>
+              <span
+                class="bg-linear-[90deg,_#FF5733,_#776BE1] text-white px-2 py-2 rounded font-bold text-xs"
+                >PLATINUM</span
+              >
+            </div>
+          </div>
+
           <!-- Select Payment -->
           <div class="flex flex-col p-3 gap-4 w-full h-auto">
             <div class="space-y-2">
