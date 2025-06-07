@@ -65,3 +65,58 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+function showPage(modalId) {
+  const show = document.getElementById(modalId);
+
+  show.classList.remove("hidden");
+}
+
+function closePage(modalId) {
+  const show = document.getElementById(modalId);
+
+  show.classList.add("hidden");
+}
+
+function register() {
+  const loginPage = document.getElementById("loginPage");
+  const newAccountPage = document.getElementById("register");
+
+  loginPage.classList.add("hidden");
+  newAccountPage.classList.remove("hidden");
+}
+
+function login() {
+  const loginPage = document.getElementById("loginPage");
+  const newAccountPage = document.getElementById("register");
+
+  newAccountPage.classList.add("hidden");
+  loginPage.classList.remove("hidden");
+}
+
+// loginSuccessfull function and then redirect to the main page
+function loginSuccessfull() {
+  const loginPage = document.getElementById("loginPage");
+  loginPage.classList.add("hidden");
+
+  // Tampilkan pesan login success
+  const successMessage = document.getElementById("loginSuccess");
+  successMessage.classList.remove("hidden");
+
+  // Setelah 2 detik, sembunyikan login success dan tampilkan welcome user
+  setTimeout(() => {
+    successMessage.classList.add("hidden");
+
+    const welcomeMessage = document.getElementById("welcomeUser");
+    welcomeMessage.classList.remove("hidden");
+
+    // Setelah 2 detik lagi, sembunyikan welcome user
+    setTimeout(() => {
+      welcomeMessage.classList.add("hidden");
+    }, 2000);
+  }, 2000);
+
+  setTimeout(() => {
+    window.location.href = "./employeePages/home.html";
+  }, 4000);
+}
