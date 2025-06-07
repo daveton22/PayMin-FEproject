@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../output.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="../css/settings.css" />
+    <link href="../../output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../../css/settings.css" />
     <link
       rel="shortcut icon"
-      href="../assets/logoMin.png"
+      href="../../assets/logoMin.png"
       type="image/x-icon"
     />
     <title>PayMin</title>
@@ -33,7 +33,7 @@
           <li>
             <div class="flex items-center justify-center mb-2">
               <img
-                src="../assets/logoMin.png"
+                src="../../assets/logoMin.png"
                 alt="Logo"
                 class="w-20 h-20 rounded-full"
               />
@@ -51,17 +51,7 @@
               <p class="text-sm">Home</p>
             </a>
           </li>
-          <li
-            class="flex flex-col items-center justify-center text-[#8B8B8B] hover:text-primary transition-all duration-300 ease-in-out h-[70px] relative z-20 cursor-pointer"
-          >
-            <a
-              href="order.html"
-              class="flex flex-col items-center justify-center"
-            >
-              <i class="fa fa-cart-plus fa-2x"></i>
-              <p class="text-sm">Orders</p>
-            </a>
-          </li>
+
           <li
             class="flex flex-col items-center justify-center text-[#8B8B8B] hover:text-primary transition-all duration-300 ease-in-out h-[70px] relative z-20 cursor-pointer"
           >
@@ -93,6 +83,17 @@
             >
               <i class="fa fa-diamond fa-2x" aria-hidden="true"></i>
               <p class="text-sm">Member</p>
+            </a>
+          </li>
+          <li
+            class="flex flex-col items-center justify-center text-[#8B8B8B] hover:text-primary transition-all duration-300 ease-in-out h-[70px] relative z-20 cursor-pointer"
+          >
+            <a
+              href="master.html"
+              class="flex flex-col items-center justify-center"
+            >
+              <i class="fa fa-key fa-2x" aria-hidden="true"></i>
+              <p class="text-sm">Master</p>
             </a>
           </li>
           <li
@@ -232,27 +233,19 @@
                 <!-- Edit Icon -->
                 <button
                   class="absolute bottom-1 right-1 bg-primary text-white rounded-full p-1.5 shadow-md hover:bg-orange-600"
+                  onclick="showModal('uploadImageModal')"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-4 h-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+                  <span
+                    class="material-symbols-outlined leading-none align-middle"
                   >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M15.232 5.232l3.536 3.536M9 11l3.536-3.536a2 2 0 012.828 0l1.172 1.172a2 2 0 010 2.828L13 15l-4 1 1-4z"
-                    />
-                  </svg>
+                    edit
+                  </span>
                 </button>
               </div>
 
               <!-- Name & Date -->
               <div class="flex flex-col justify-center ml-4 text-lg">
-                <p class="font-semibold text-gray-800">Daveton Aljabar</p>
+                <p class="font-semibold text-gray-800">Admin</p>
                 <p class="text-gray-500">Last updated: 12/05/2024</p>
               </div>
             </div>
@@ -350,7 +343,7 @@
             <!-- Logo and Name -->
             <div class="flex items-center space-x-2 mb-4">
               <img
-                src="../assets/logoMin.png"
+                src="../../assets/logoMin.png"
                 alt="Logo"
                 class="w-10 h-10 rounded-sm"
               />
@@ -384,6 +377,7 @@
         <!-- Modal -->
         <div
           class="fixed inset-0 backdrop-blur-md bg-opacity-50 flex items-center justify-center z-50 hidden"
+          id="uploadImageModal"
         >
           <!-- Modal -->
           <div class="bg-white rounded-lg shadow-lg p-8 w-full max-w-md">
@@ -423,7 +417,10 @@
 
             <!-- Optional footer buttons -->
             <div class="mt-6 flex justify-end space-x-3">
-              <button class="text-gray-500 hover:text-gray-700 text-sm">
+              <button
+                class="text-gray-500 hover:text-gray-700 text-sm"
+                onclick="closeModal('uploadImageModal')"
+              >
                 Cancel
               </button>
               <button
@@ -436,6 +433,6 @@
         </div>
       </section>
     </main>
-    <script src="../js/settings.js"></script>
+    <script src="../../js/settings.js"></script>
   </body>
 </html>
