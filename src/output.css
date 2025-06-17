@@ -300,6 +300,9 @@
   .left-\[50\%\] {
     left: 50%;
   }
+  .-z-50 {
+    z-index: calc(50 * -1);
+  }
   .z-2 {
     z-index: 2;
   }
@@ -341,6 +344,9 @@
   }
   .row-start-4 {
     grid-row-start: 4;
+  }
+  .m-0 {
+    margin: calc(var(--spacing) * 0);
   }
   .mx-1 {
     margin-inline: calc(var(--spacing) * 1);
