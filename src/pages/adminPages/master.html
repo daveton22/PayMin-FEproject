@@ -229,6 +229,9 @@
                   class="sticky top-0 z-10 bg-[#747474] text-white border-b-2 border-tertiary h-12"
                 >
                   <tr class="text-center text-sm">
+                    <th class="p-5">
+                      <span class="material-symbols-outlined"> close </span>
+                    </th>
                     <th class="p-5">Action</th>
                     <th class="p-5">Employee ID</th>
                     <th class="p-5">Name</th>
@@ -238,6 +241,9 @@
                 </thead>
                 <tbody>
                   <tr class="border-b border-tertiary h-[3rem] text-center">
+                    <td class="p-3">
+                      <span class="material-symbols-outlined"> close </span>
+                    </td>
                     <td class="">
                       <div class="flex justify-center items-center">
                         <button
@@ -277,7 +283,7 @@
                     <td class="p-3">Ridho</td>
                     <td class="p-3">
                       <button
-                        class="bg-primary text-white w-[60%] h-[2.5em] rounded-full"
+                        class="bg-primary text-white w-[60%] h-[2.5em] rounded-2xl"
                       >
                         Admin
                       </button>
@@ -418,6 +424,7 @@
         </div>
       </div>
 
+      <!-- Modal Add Master -->
       <div
         class="fixed inset-0 bg-black/25 backdrop-blur-md justify-center items-center z-50 animate-fadeIn hidden"
         id="modalAddItem"
@@ -543,6 +550,7 @@
         </div>
       </div>
 
+      <!-- Modal Delete Master -->
       <div
         class="fixed inset-0 bg-black/25 backdrop-blur-md justify-center items-center z-50 animate-fadeIn hidden"
         id="modalDeleteItem"
@@ -578,6 +586,7 @@
         </div>
       </div>
 
+      <!-- Modal View Master -->
       <div
         class="fixed inset-0 bg-black/25 backdrop-blur-md flex justify-center items-center z-50 animate-fadeIn hidden"
         id="modalViewItem"
@@ -633,6 +642,12 @@
               <!-- Username -->
               <div class="flex justify-between gap-x-8">
                 <span class="text-gray-700">Username</span>
+                <span class="text-gray-500">ereneren</span>
+              </div>
+
+              <!-- Password -->
+              <div class="flex justify-between gap-x-8">
+                <span class="text-gray-700">Password</span>
                 <span class="text-gray-500">ereneren</span>
               </div>
             </div>
