@@ -477,21 +477,38 @@
                 </div>
               </div>
 
-              <label
-                for="itemCategory"
-                class="block text-sm font-medium text-gray-700 mt-4"
-                >Item Category</label
-              >
-              <select
-                id="itemCategory"
-                class="mt-1 p-1 block w-full cursor-pointer border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary"
-              >
-                <option value="cake">Cake</option>
-                <option value="drink">Drink</option>
-                <option value="food">Food</option>
-                <option value="snack">Snack</option>
-                <option value="other">Other</option>
-              </select>
+              <div class="flex gap-x-4">
+                <div class="flex-1">
+                  <label
+                    for="itemCategory"
+                    class="block text-sm font-medium text-gray-700 mt-4"
+                    >Category</label
+                  >
+                  <select
+                    id="itemCategory"
+                    class="mt-1 p-1 block w-full cursor-pointer border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary"
+                  >
+                    <option value="food">Food</option>
+                    <option value="drink">Drink</option>
+                    <option value="snack">Snack</option>
+                    <option value="dessert">Dessert</option>
+                    <option value="signature">Signature</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div class="flex-1">
+                  <label
+                    for="itemSubCategory"
+                    class="block text-sm font-medium text-gray-700 mt-4"
+                    >Sub Category</label
+                  >
+                  <select
+                    id="itemSubCategory"
+                    class="mt-1 p-1 block w-full cursor-pointer border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary"
+                  ></select>
+                </div>
+              </div>
             </div>
           </div>
 
