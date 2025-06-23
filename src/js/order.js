@@ -97,28 +97,56 @@ function adjustGridColumns() {
 window.addEventListener("resize", adjustGridColumns);
 adjustGridColumns();
 
-const paymentSuccess = document.getElementById("modalOrderFinish");
+function confirmPayment() {
+  const paymentSuccess = document.getElementById("processingPayment");
+  const processingSection = document.getElementById("paymentSuccess");
+  const successSection = document.getElementById("successPayment");
 
-function showPaymentSuccessModal() {
+  // Tampilkan modal dan bagian processing
   paymentSuccess.classList.remove("hidden");
+  processingSection.classList.remove("hidden");
+  successSection.classList.add("hidden");
 
-  setTimeout(() => {
-    paymentSuccess.classList.add("hidden");
-  }, 3500);
-
+  // Sembunyikan invoice dan payment sidebar
   const invoiceModal = document.getElementById("modalInvoice");
-  invoiceModal.classList.add("hidden");
-
   const paymentAside = document.getElementById("sidebarPayment");
+  const finishAside = document.getElementById("sidebarFinish");
+
+  invoiceModal.classList.add("hidden");
   paymentAside.classList.add("hidden");
 
-  const finishAside = document.getElementById("sidebarFinish");
-  finishAside.classList.remove("hidden");
+  // Setelah delay 3 detik, tampilkan bagian sukses
+  setTimeout(() => {
+    processingSection.classList.add("hidden");
+    successSection.classList.remove("hidden");
+  }, 3000);
 
-  // orderList.classList.remove(
-  //   "grid-cols-1",
-  //   "sm:grid-cols-2",
-  //   "lg:grid-cols-3",
-  //   "xl:grid-cols-4"
-  // );
+  // Setelah delay total 6.5 detik, sembunyikan modal dan tampilkan sidebarFinish
+  setTimeout(() => {
+    paymentSuccess.classList.add("hidden");
+    finishAside.classList.remove("hidden");
+  }, 6500);
+}
+
+const modalOrderFinish = document.getElementById("modalOrderFinish");
+const processingSection = document.getElementById("processingPayment");
+const successSection = document.getElementById("paymentSuccess");
+
+function showPaymentProcessModal() {
+  modalOrderFinish.classList.remove("hidden");
+  processingSection.classList.remove("hidden");
+  successSection.classList.add("hidden");
+
+  document.getElementById("modalInvoice")?.classList.add("hidden");
+  document.getElementById("sidebarPayment")?.classList.add("hidden");
+
+  setTimeout(() => {
+    processingSection.classList.add("hidden");
+    successSection.classList.remove("hidden");
+  }, 3500);
+
+  setTimeout(() => {
+    modalOrderFinish.classList.add("hidden");
+    document.getElementById("sidebarFinish")?.classList.remove("hidden");
+  }, 6500);
 }

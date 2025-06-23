@@ -269,37 +269,6 @@
         </div>
       </section>
 
-      <!-- Modal Order Finish -->
-      <div
-        class="fixed hidden inset-0 flex items-center justify-center backdrop-blur-md bg-opacity-50 bg-opacity-50 z-100 w-full animate-fadeIn"
-        id="modalOrderFinish"
-      >
-        <div
-          class="bg-white relative rounded-2xl p-16 w-[50vw] h-[80vh] shadow-lg modal-content flex flex-col items-center"
-        >
-          <h2 class="text-3xl font-semibold text-center mb-2">
-            Processing Payment
-          </h2>
-
-          <div
-            class="flex flex-col items-center justify-center w-full h-full my-auto"
-          >
-            <div
-              class="w-48 h-48 bg-[#e2fff3] rounded-full flex items-center justify-center mb-5 animate-jump-in animate-once"
-            >
-              <div
-                class="text-white w-24 h-24 bg-[#23A26D] rounded-full flex items-center justify-center"
-              >
-                <i class="fa fa-check fa-3x" aria-hidden="true"></i>
-              </div>
-            </div>
-
-            <h1 class="text-2xl font-medium">Payment Success</h1>
-            <p class="">Payment has been successfully done.</p>
-          </div>
-        </div>
-      </div>
-
       <!-- Sidebar Ordered List -->
       <aside
         id="sidebarOrderedList"
@@ -1013,7 +982,7 @@
               class="bg-linear-[180deg,_#FF5733,_#BB482F] text-white px-8 py-[0.80rem] rounded-lg text-lg font-semibold shadow-md hover:bg-primary-dark transition-colors duration-200 w-full"
               type="button"
               id="continuePaymentBtn"
-              onclick="showPaymentSuccessModal()"
+              onclick="showPaymentProcessModal()"
             >
               Confirmation
             </button>
@@ -1134,11 +1103,88 @@
             </button>
             <button
               class="px-4 py-2 rounded-md bg-primary text-white hover:bg-primary"
-              onclick="showPaymentSuccessModal()"
+              onclick="showPaymentProcessModal()"
             >
               Confirm
             </button>
           </div>
+        </div>
+      </div>
+
+      <!-- Modal Order Finish -->
+      <div
+        id="modalOrderFinish"
+        class="fixed hidden inset-0 flex items-center justify-center backdrop-blur-md bg-opacity-50 z-100 w-full animate-fadeIn"
+      >
+        <div
+          class="bg-white relative rounded-2xl p-16 w-[50vw] h-[80vh] shadow-lg flex flex-col items-center"
+        >
+          <!-- Processing section -->
+          <div
+            id="processingPayment"
+            class="flex flex-col items-center justify-center w-full h-full my-auto"
+          >
+            <h2 class="text-3xl font-semibold mb-2">Processing Payment</h2>
+
+            <div class="w-48 h-48 flex items-center justify-center mb-5">
+              <i class="fa fa-spinner fa-spin fa-3x text-textColor"></i>
+            </div>
+
+            <p class="text-center">
+              Please wait while we process your payment. This may take a few
+              seconds.
+            </p>
+          </div>
+
+          <!-- Success section -->
+          <div
+            id="paymentSuccess"
+            class="hidden flex flex-col items-center justify-center w-full h-full my-auto"
+          >
+            <h2 class="text-3xl font-semibold mb-2">Payment Success</h2>
+
+            <div
+              class="w-48 h-48 bg-[#e2fff3] rounded-full flex items-center justify-center mb-5"
+            >
+              <div
+                class="w-24 h-24 bg-[#23A26D] rounded-full flex items-center justify-center text-white"
+              >
+                <i class="fa fa-check fa-3x"></i>
+              </div>
+            </div>
+
+            <p>Payment has been successfully done.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- QRIS Payment modal pop up (If select qris payment)-->
+      <div
+        class="fixed inset-0 flex items-center justify-center backdrop-blur-md bg-opacity-50 z-50"
+        id="qrisPaymentModal"
+      >
+        <div
+          class="bg-white w-auto h-auto rounded-2xl shadow-lg p-6 flex flex-col items-center"
+        >
+          <h2 class="text-2xl font-bold text-primary mb-4">QRIS Payment</h2>
+          <p class="text-sm text-gray-600 mb-6">
+            Scan the QR code below to complete your payment.
+          </p>
+
+          <img
+            src="../../assets/qrcode.png"
+            alt="QRIS Code"
+            class="w-60 h-w-60 mb-4"
+          />
+
+          <h2 class="my-4 text-xl text-textColor">Total : Rp.50.000</h2>
+
+          <button
+            class="bg-primary text-white px-4 py-2 rounded hover:bg-primary-dark transition"
+            onclick="closeModal('qrisPaymentModal')"
+          >
+            Close
+          </button>
         </div>
       </div>
 
