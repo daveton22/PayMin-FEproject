@@ -23,14 +23,26 @@ function showAboutUs() {
 // Function to show the modal
 function showModal(modalId) {
   const modal = document.getElementById(modalId);
-  const modalContent = modal.querySelector(".modal-content");
 
   modal.classList.remove("hidden");
 }
 
 function closeModal(modalId) {
   const modal = document.getElementById(modalId);
-  const modalContent = modal.querySelector(".modal-content");
 
   modal.classList.add("hidden");
+}
+
+// 3 navigation (Your Restaurant, Security, About Us), When navigate to another page, added animated fade left and right
+function navigateToPage(pageId) {
+  const pages = [yourRestaurant, security, aboutUs];
+  pages.forEach((page) => {
+    if (page.id === pageId) {
+      page.classList.remove("hidden");
+      page.classList.add("fade-left");
+    } else {
+      page.classList.add("hidden");
+      page.classList.remove("fade-left");
+    }
+  });
 }

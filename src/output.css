@@ -17,7 +17,6 @@
     --color-orange-500: oklch(70.5% 0.213 47.604);
     --color-orange-600: oklch(64.6% 0.222 41.116);
     --color-orange-800: oklch(47% 0.157 37.304);
-    --color-green-500: oklch(72.3% 0.219 149.579);
     --color-blue-500: oklch(62.3% 0.214 259.815);
     --color-gray-50: oklch(98.5% 0.002 247.839);
     --color-gray-100: oklch(96.7% 0.003 264.542);
@@ -49,8 +48,6 @@
     --text-3xl--line-height: calc(2.25 / 1.875);
     --text-4xl: 2.25rem;
     --text-4xl--line-height: calc(2.5 / 2.25);
-    --text-6xl: 3.75rem;
-    --text-6xl--line-height: 1;
     --font-weight-light: 300;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
@@ -72,7 +69,12 @@
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --animate-jump-in: jump-in var(--default-animation-duration, 0.5s) var(--default-animation-timing-function, ease) var(--default-animation-delay, 0s) both;
+    --animate-jump: jump var(--default-animation-duration, 0.5s) var(--default-animation-timing-function, ease) var(--default-animation-delay, 0s) both;
+    --animate-fade: fade var(--default-animation-duration, 1s) var(--default-animation-timing-function, ease) var(--default-animation-delay, 0s) both;
+    --animate-fade-down: fade-down var(--default-animation-duration, 1s) var(--default-animation-timing-function, ease) var(--default-animation-delay, 0s) both;
+    --animate-fade-up: fade-up var(--default-animation-duration, 1s) var(--default-animation-timing-function, ease) var(--default-animation-delay, 0s) both;
+    --animate-fade-left: fade-left var(--default-animation-duration, 1s) var(--default-animation-timing-function, ease) var(--default-animation-delay, 0s) both;
+    --animate-fade-right: fade-right var(--default-animation-duration, 1s) var(--default-animation-timing-function, ease) var(--default-animation-delay, 0s) both;
     --font-poppins: "Poppins", sans-serif;
     --color-primary: #ff5733;
     --color-tertiary: #979797;
@@ -525,9 +527,6 @@
   .h-\[80vh\] {
     height: 80vh;
   }
-  .h-\[300px\] {
-    height: 300px;
-  }
   .h-\[350px\] {
     height: 350px;
   }
@@ -704,8 +703,23 @@
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
-  .animate-jump-in {
-    animation: var(--animate-jump-in);
+  .animate-fade {
+    animation: var(--animate-fade);
+  }
+  .animate-fade-down {
+    animation: var(--animate-fade-down);
+  }
+  .animate-fade-left {
+    animation: var(--animate-fade-left);
+  }
+  .animate-fade-right {
+    animation: var(--animate-fade-right);
+  }
+  .animate-fade-up {
+    animation: var(--animate-fade-up);
+  }
+  .animate-jump {
+    animation: var(--animate-jump);
   }
   .cursor-pointer {
     cursor: pointer;
@@ -980,6 +994,9 @@
   }
   .border-\[\#E4E4E4\] {
     border-color: #E4E4E4;
+  }
+  .border-black {
+    border-color: var(--color-black);
   }
   .border-gray-200 {
     border-color: var(--color-gray-200);
@@ -1260,10 +1277,6 @@
     font-size: var(--text-4xl);
     line-height: var(--tw-leading, var(--text-4xl--line-height));
   }
-  .text-6xl {
-    font-size: var(--text-6xl);
-    line-height: var(--tw-leading, var(--text-6xl--line-height));
-  }
   .text-base {
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
@@ -1393,9 +1406,6 @@
   .text-gray-900 {
     color: var(--color-gray-900);
   }
-  .text-green-500 {
-    color: var(--color-green-500);
-  }
   .text-primary {
     color: var(--color-primary);
   }
@@ -1421,6 +1431,9 @@
     &::placeholder {
       color: var(--color-gray-400);
     }
+  }
+  .opacity-0 {
+    opacity: 0%;
   }
   .opacity-\[15\%\] {
     opacity: 15%;
@@ -1501,6 +1514,57 @@
     --tw-outline-style: none;
     outline-style: none;
   }
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+  .animate-delay-700 {
+    animation-delay: 700ms;
+  }
+  .animate-delay-1000 {
+    animation-delay: 1000ms;
+  }
+  .animate-delay-\[300ms\] {
+    animation-delay: 300ms;
+  }
+  .animate-delay-\[500\] {
+    animation-delay: 500;
+  }
+  .animate-delay-\[500ms\] {
+    animation-delay: 500ms;
+  }
+  .animate-delay-\[700ms\] {
+    animation-delay: 700ms;
+  }
+  .animate-delay-\[1000ms\] {
+    animation-delay: 1000ms;
+  }
+  .animate-delay-\[1200ms\] {
+    animation-delay: 1200ms;
+  }
+  .animate-delay-\[1300ms\] {
+    animation-delay: 1300ms;
+  }
+  .animate-delay-\[1400ms\] {
+    animation-delay: 1400ms;
+  }
+  .animate-delay-\[1600ms\] {
+    animation-delay: 1600ms;
+  }
+  .animate-delay-\[1800ms\] {
+    animation-delay: 1800ms;
+  }
+  .animate-delay-\[2000ms\] {
+    animation-delay: 2000ms;
+  }
+  .animate-delay-\[2300ms\] {
+    animation-delay: 2300ms;
+  }
+  .animate-duration-\[400ms\] {
+    animation-duration: 400ms;
+  }
   .animate-once {
     animation-iteration-count: 1;
   }
@@ -1528,10 +1592,24 @@
       }
     }
   }
+  .hover\:bg-\[\#4664ec\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #4664ec;
+      }
+    }
+  }
   .hover\:bg-\[\#FFB09F\] {
     &:hover {
       @media (hover: hover) {
         background-color: #FFB09F;
+      }
+    }
+  }
+  .hover\:bg-\[\#cc3f3f\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #cc3f3f;
       }
     }
   }
@@ -1542,10 +1620,24 @@
       }
     }
   }
+  .hover\:bg-\[\#db3610\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #db3610;
+      }
+    }
+  }
   .hover\:bg-\[\#e0e0e0\] {
     &:hover {
       @media (hover: hover) {
         background-color: #e0e0e0;
+      }
+    }
+  }
+  .hover\:bg-\[\#ff58334b\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #ff58334b;
       }
     }
   }
@@ -1757,6 +1849,9 @@
 }
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 button {
+  cursor: pointer;
+}
+option {
   cursor: pointer;
 }
 @property --tw-translate-x {
@@ -2045,15 +2140,63 @@ button {
   syntax: "*";
   inherits: false;
 }
-@keyframes jump-in {
-  0% {
-    transform: scale(0);
+@keyframes jump {
+  0%, 100% {
+    transform: scale(1);
   }
-  80% {
+  10% {
+    transform: scale(0.8);
+  }
+  50% {
     transform: scale(1.2);
   }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
   100% {
-    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade-left {
+  0% {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fade-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 @layer properties {

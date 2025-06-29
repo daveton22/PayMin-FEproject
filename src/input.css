@@ -20,4 +20,7 @@ button {
   @apply cursor-pointer;
 }
 
+option {
+  @apply cursor-pointer;
+}
 /* bg-linear-[180deg,_#FF5733,_#BB482F] */
