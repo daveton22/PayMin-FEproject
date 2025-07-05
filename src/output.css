@@ -63,6 +63,7 @@
     --radius-3xl: 1.5rem;
     --radius-4xl: 2rem;
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --animate-pulse: pulse var(--default-animation-duration, 2s) var(--default-animation-timing-function, cubic-bezier(0.4, 0, 0.6, 1)) var(--default-animation-delay, 0s) infinite;
     --blur-sm: 8px;
     --blur-md: 12px;
     --default-transition-duration: 150ms;
@@ -70,6 +71,7 @@
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --animate-jump: jump var(--default-animation-duration, 0.5s) var(--default-animation-timing-function, ease) var(--default-animation-delay, 0s) both;
+    --animate-jump-in: jump-in var(--default-animation-duration, 0.5s) var(--default-animation-timing-function, ease) var(--default-animation-delay, 0s) both;
     --animate-fade: fade var(--default-animation-duration, 1s) var(--default-animation-timing-function, ease) var(--default-animation-delay, 0s) both;
     --animate-fade-down: fade-down var(--default-animation-duration, 1s) var(--default-animation-timing-function, ease) var(--default-animation-delay, 0s) both;
     --animate-fade-up: fade-up var(--default-animation-duration, 1s) var(--default-animation-timing-function, ease) var(--default-animation-delay, 0s) both;
@@ -720,6 +722,12 @@
   }
   .animate-jump {
     animation: var(--animate-jump);
+  }
+  .animate-jump-in {
+    animation: var(--animate-jump-in);
+  }
+  .animate-pulse {
+    animation: var(--animate-pulse);
   }
   .cursor-pointer {
     cursor: pointer;
@@ -1432,9 +1440,6 @@
       color: var(--color-gray-400);
     }
   }
-  .opacity-0 {
-    opacity: 0%;
-  }
   .opacity-\[15\%\] {
     opacity: 15%;
   }
@@ -1538,6 +1543,9 @@
   .animate-delay-\[700ms\] {
     animation-delay: 700ms;
   }
+  .animate-delay-\[800ms\] {
+    animation-delay: 800ms;
+  }
   .animate-delay-\[1000ms\] {
     animation-delay: 1000ms;
   }
@@ -1564,6 +1572,9 @@
   }
   .animate-duration-\[400ms\] {
     animation-duration: 400ms;
+  }
+  .animate-infinite {
+    animation-iteration-count: infinite;
   }
   .animate-once {
     animation-iteration-count: 1;
@@ -1854,6 +1865,16 @@ button {
 option {
   cursor: pointer;
 }
+#logoutModal {
+  animation: var(--animate-fade);
+  animation-duration: 400ms;
+  animation-iteration-count: 1;
+}
+#logoutModal > div {
+  animation: var(--animate-jump);
+  animation-duration: 400ms;
+  animation-iteration-count: 1;
+}
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;
@@ -2140,6 +2161,11 @@ option {
   syntax: "*";
   inherits: false;
 }
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
 @keyframes jump {
   0%, 100% {
     transform: scale(1);
@@ -2149,6 +2175,17 @@ option {
   }
   50% {
     transform: scale(1.2);
+  }
+}
+@keyframes jump-in {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 @keyframes fade {

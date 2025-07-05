@@ -24,3 +24,11 @@ option {
   @apply cursor-pointer;
 }
 /* bg-linear-[180deg,_#FF5733,_#BB482F] */
+
+#logoutModal {
+  @apply animate-fade animate-once animate-duration-[400ms];
+}
+
+#logoutModal > div {
+  @apply animate-jump animate-once animate-duration-[400ms];
+}
